@@ -1,5 +1,6 @@
 ﻿namespace testing.Services;
 
+using MCPSharp;
 using ModelContextProtocol.Server;
 using System.ComponentModel;
 using testing.Interfaces;

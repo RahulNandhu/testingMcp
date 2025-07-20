@@ -1,11 +1,15 @@
 ﻿namespace testing.Services;
 
 using MCPSharp;
+using ModelContextProtocol.Server;
+using System.ComponentModel;
 using testing.Interfaces;
 
+[McpServerToolType]
 public class MCPTools: IMCPTools
 {
-    [McpTool(name: "StudentCources", description: "This will return all student cources")]
+    [McpServerTool]
+    [Description("this will retuen student cources")]
     public async Task<List<Items>> GetStudentCources()
     {
         return new List<Items> {
@@ -14,7 +18,9 @@ public class MCPTools: IMCPTools
         };
     }
 
-    [McpTool(name: "FacultyCources", description: "This will return all faculty cources")]
+    //[McpTool(name: "FacultyCources", description: "This will return all faculty cources")]
+    [McpServerTool]
+    [Description("this will retuen faculty cources")]
     public async Task<List<Items>> GetFacultyCources()
     {
         return new List<Items> {
@@ -23,7 +29,9 @@ public class MCPTools: IMCPTools
         };
     }
 
-    [McpTool(name: "StaffDuties", description: "This will return all Staff's duties")]
+    //[McpTool(name: "StaffDuties", description: "This will return all Staff's duties")]
+    [McpServerTool]
+    [Description("this will retuen staff duties")]
     public async Task<List<Items>> GetStaffDuties()
     {
         return new List<Items> {

@@ -22,6 +22,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICommonServices, CommonServices>();
 builder.Services.AddScoped<IMCPTools, MCPTools>();
+builder.Services
+    .AddMcpServer()
+    .WithHttpTransport()
+    .WithToolsFromAssembly();
+
+
+
 
 var app = builder.Build();
 
@@ -37,5 +44,7 @@ app.UseSwaggerUI();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapMcp();
 
 app.Run();

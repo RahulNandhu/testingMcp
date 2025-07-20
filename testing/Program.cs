@@ -1,5 +1,6 @@
 using testing.Interfaces;
 using testing.Services;
+using MCPSharp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,13 +12,20 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(Int32.Parse(port));
 });
 
+//builder.Services.AddMcpSharp(options =>
+//{
+//    options.AddToolsFrom<IMCPTools>();
+//});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICommonServices, CommonServices>();
+builder.Services.AddScoped<IMCPTools, MCPTools>();
 
 var app = builder.Build();
 
+//app.UseMcpSharp();
 // Configure the HTTP request pipeline.
 
 app.UseSwagger();

@@ -1,6 +1,5 @@
 using testing.Interfaces;
 using testing.Services;
-using MCPSharp;
 
 var builder = WebApplication.CreateBuilder(args);
 

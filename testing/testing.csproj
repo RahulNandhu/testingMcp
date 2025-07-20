@@ -8,6 +8,10 @@
     <EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
     <UserSecretsId>487af252-c542-4731-be71-4e5376b90311</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<PublishProfile>DefaultContainer</PublishProfile>
+	<ContainerImageName>rahulp/testing-mcp</ContainerImageName>
+	<ContainerRegistry>docker.io</ContainerRegistry>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +20,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
     <PackageReference Include="ModelContextProtocol" Version="0.3.0-preview.3" />
     <PackageReference Include="ModelContextProtocol.AspNetCore" Version="0.3.0-preview.3" />
+    <PackageReference Include="ModelContextProtocol.Core" Version="0.3.0-preview.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 

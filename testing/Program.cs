@@ -1,6 +1,5 @@
 using testing.Interfaces;
 using testing.Services;
-using MCPSharp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +24,7 @@ builder.Services.AddScoped<IMCPTools, MCPTools>();
 builder.Services
     .AddMcpServer()
     .WithHttpTransport()
-    .WithToolsFromAssembly();
+    .WithTools<MCPTools>();
 
 
 
@@ -40,6 +39,14 @@ app.UseSwaggerUI();
 
 
 //app.UseHttpsRedirection();
+
+app.UseCors(policy =>
+  policy
+    .AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+);
+
 
 app.UseAuthorization();
 
